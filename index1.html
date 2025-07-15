@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEDT 2.0 - Demo Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+        .section:nth-child(6) { animation-delay: 1s; }
+        .section:nth-child(7) { animation-delay: 1.2s; }
+
+        .section-title {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .timestamp {
+            background: rgba(0, 255, 136, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #00ff88;
+        }
+
+        .wireframe {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wireframe::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.05), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .wireframe:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+        }
+
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .architecture-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .arch-node {
+            background: rgba(0, 255, 136, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #00ff88;
+            margin: 10px;
+            text-align: center;
+            min-width: 150px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .arch-node:hover {
+            background: rgba(0, 255, 136, 0.2);
+            transform: scale(1.1);
+        }
+
+        .arch-arrow {
+            font-size: 2em;
+            color: #00d4ff;
+            margin: 0 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .mobile-mockup {
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px auto;
+            border: 3px solid #00ff88;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .green-coins {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .emotion-widget {
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid #00ff88;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            margin: 20px auto;
+            animation: emotionPulse 2s infinite;
+        }
+
+        @keyframes emotionPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .quantum-panel {
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid #8a2be2;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .quantum-result {
+            font-size: 1.5em;
+            color: #8a2be2;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .causal-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .causal-node {
+            background: rgba(255, 165, 0, 0.1);
+            border: 2px solid #ffa500;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .causal-connection {
+            width: 2px;
+            height: 30px;
+            background: #ffa500;
+            margin: 0 auto;
+        }
+
+        .blockchain-proof {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .proof-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .notification {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 4px solid #00ff88;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 10px 10px 0;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .demo-nav {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-item {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .nav-item:hover {
+            background: rgba(0, 255, 136, 0.2);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .architecture-diagram {
+                flex-direction: column;
+            }
+            
+            .demo-nav {
+                display: none;
+            }
+            
+            .mobile-mockup {
+                width: 250px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="section">
+            <h1 class="section-title">CEDT 2.0 Demo Wireframes</h1>
+            <p style="text-align: center; font-size: 1.2em; opacity: 0.8; margin-bottom: 40px;">
+                Circular Economy Digital Twin - International Hackathon Level
+            </p>
+        </div>
+
+        <!-- Scene 1: Opening Impact -->
+        <div class="section" id="scene1">
+            <div class="timestamp">0:00 - 0:08</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #ff6b6b;">Problem Statement Scene</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">📦</div>
+                        <p>Empty Shelves</p>
+                    </div>
+                    <div style="font-size: 3em; color: #ff6b6b;">→</div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">🗑</div>
+                        <p>Landfill Crisis</p>
+                    </div>
+                    <div style="font-size: 3em; color: #ff6b6b;">→</div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">💰</div>
+                        <p>$1T Loss</p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="font-size: 6em; animation: pulse 2s infinite;">🌊</div>
+                    <p style="font-size: 1.5em; margin-top: 10px;">CEDT 2.0 Logo Emerges</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 2: Architecture Overview -->
+        <div class="section" id="scene2">
+            <div class="timestamp">0:08 - 0:20</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00ff88;">System Architecture Flyover</h3>
+                <div class="architecture-diagram">
+                    <div class="arch-node">
+                        <div style="font-size: 2em; margin-bottom: 10px;">🏠</div>
+                        <p>Home IoT</p>
+                        <small>Smart Scales</small>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-node">
+                        <div style="font-size: 2em; margin-bottom: 10px;">📱</div>
+                        <p>Consumer App</p>
+                        <small>GreenCoins</small>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-node">
+                        <div style="font-size: 2em; margin-bottom: 10px;">🧠</div>
+                        <p>Twin Core</p>
+                        <small>AI Engine</small>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-node">
+                        <div style="font-size: 2em; margin-bottom: 10px;">⚡</div>
+                        <p>Quantum</p>
+                        <small>Optimizer</small>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div class="arch-node" style="background: rgba(0, 212, 255, 0.1); border-color: #00d4ff;">
+                        <div style="font-size: 2em; margin-bottom: 10px;">🔗</div>
+                        <p>Blockchain</p>
+                        <small>ZK Proofs</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 3: Live Dashboard -->
+        <div class="section" id="scene3">
+            <div class="timestamp">0:20 - 0:50</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00ff88;">Twin Control Center</h3>
+                <div class="dashboard">
+                    <div class="metric-card">
+                        <div class="metric-value">$2.3M</div>
+                        <div class="metric-label">Cost Savings</div>
+                        <div style="margin-top: 10px; color: #00ff88;">↓ 23%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">36%</div>
+                        <div class="metric-label">CO₂ Reduction</div>
+                        <div style="margin-top: 10px; color: #00ff88;">↓ Local Source</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.5%</div>
+                        <div class="metric-label">Shelf Availability</div>
+                        <div style="margin-top: 10px; color: #00ff88;">↑ Real-time</div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <button style="background: linear-gradient(45deg, #00ff88, #00d4ff); color: #000; padding: 15px 30px; border: none; border-radius: 25px; font-size: 1.2em; font-weight: bold; cursor: pointer;">
+                        🌱 ACTIVATE LOCAL SOURCE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 4: Quantum Optimization -->
+        <div class="section" id="scene4">
+            <div class="timestamp">0:50 - 1:00</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #8a2be2;">Quantum-Hybrid Optimizer</h3>
+                <div class="quantum-panel">
+                    <div style="font-size: 3em; margin-bottom: 20px;">⚛</div>
+                    <div class="quantum-result">SOLVED: 4.2M Route Combinations</div>
+                    <div style="font-size: 1.2em; margin: 15px 0;">⏱ Processing Time: 1.3 seconds</div>
+                    <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                        <div>
+                            <div style="font-size: 2em; color: #8a2be2;">🔄</div>
+                            <p>QUBO Annealing</p>
+                        </div>
+                        <div style="font-size: 2em; color: #8a2be2;">+</div>
+                        <div>
+                            <div style="font-size: 2em; color: #8a2be2;">🤖</div>
+                            <p>RL Optimization</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <div style="background: rgba(138, 43, 226, 0.1); padding: 15px; border-radius: 10px; display: inline-block;">
+                        <span style="color: #8a2be2; font-weight: bold;">🏆 Greenest Route Found</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 5: Consumer App -->
+        <div class="section" id="scene5">
+            <div class="timestamp">1:00 - 1:15</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00ff88;">Consumer Experience</h3>
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div class="mobile-mockup">
+                        <div class="mobile-screen">
+                            <div class="app-header">
+                                <div style="font-size: 1.5em;">🌱 EcoShop</div>
+                                <div class="green-coins">💰 1,247 GreenCoins</div>
+                            </div>
+                            <div style="text-align: center; margin: 20px 0;">
+                                <div style="font-size: 4em; margin-bottom: 15px;">📱</div>
+                                <p>Scan QR Code</p>
+                            </div>
+                            <div class="blockchain-proof">
+                                <div class="proof-badge">✅ ZK Verified</div>
+                                <p style="margin: 10px 0;">CO₂ Saved: 220g</p>
+                                <p style="font-size: 0.9em; opacity: 0.8;">Blockchain Certified</p>
+                            </div>
+                            <div style="background: rgba(0, 255, 136, 0.1); padding: 15px; border-radius: 10px; margin-top: 20px;">
+                                <p style="text-align: center; font-weight: bold;">🎉 Great choice!</p>
+                                <p style="text-align: center; font-size: 0.9em;">+50 GreenCoins earned</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 6em; margin-bottom: 20px;">🔗</div>
+                        <p style="font-size: 1.2em; font-weight: bold;">Zero-Knowledge Proofs</p>
+                        <p style="opacity: 0.8;">No greenwashing • Cryptographic proof</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 6: Emotion Recognition -->
+        <div class="section" id="scene6">
+            <div class="timestamp">1:15 - 1:25</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00d4ff;">Emotion-Aware Checkout</h3>
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div style="text-align: center;">
+                        <div style="border: 3px solid #00d4ff; border-radius: 15px; padding: 20px; background: rgba(0, 212, 255, 0.1);">
+                            <div style="font-size: 3em; margin-bottom: 15px;">📹</div>
+                            <p>Webcam Analysis</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 3em; color: #00d4ff;">→</div>
+                    <div class="emotion-widget">
+                        😊
+                    </div>
+                    <div style="font-size: 3em; color: #00d4ff;">→</div>
+                    <div style="text-align: center;">
+                        <div style="background: rgba(0, 212, 255, 0.1); padding: 20px; border-radius: 15px; border: 2px solid #00d4ff;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🎵</div>
+                            <p>Personalized Ambience</p>
+                            <div style="margin-top: 15px;">
+                                <div style="display: inline-block; background: #00d4ff; color: #000; padding: 5px 15px; border-radius: 20px; margin: 5px;">Upbeat Music</div>
+                                <div style="display: inline-block; background: #00d4ff; color: #000; padding: 5px 15px; border-radius: 20px; margin: 5px;">Warm Lighting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="background: rgba(0, 255, 136, 0.1); padding: 15px; border-radius: 10px; display: inline-block;">
+                        <span style="color: #00ff88; font-weight: bold;">📈 Basket Value: +15% Average</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 7: Predictive Refill -->
+        <div class="section" id="scene7">
+            <div class="timestamp">1:25 - 1:40</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00ff88;">Predictive Household Refill</h3>
+                <div style="display: flex; justify-content: space-around; align-items: center;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 4em; margin-bottom: 15px;">⚖</div>
+                        <p style="font-weight: bold;">Smart Kitchen Scale</p>
+                        <div style="margin-top: 15px; padding: 10px; background: rgba(255, 165, 0, 0.1); border-radius: 10px;">
+                            <p>Oat Milk: 50ml remaining</p>
+                            <p style="font-size: 0.9em; opacity: 0.8;">Predicted empty: July 14</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 3em; color: #00ff88;">→</div>
+                    <div class="mobile-mockup" style="width: 250px; height: 400px;">
+                        <div class="mobile-screen">
+                            <div class="notification">
+                                <div style="font-size: 2em; margin-bottom: 10px;">🥛</div>
+                                <p style="font-weight: bold;">Auto-Refill Alert</p>
+                                <p style="margin: 10px 0;">Oat Milk running low</p>
+                                <p style="font-size: 0.9em; opacity: 0.8;">Delivery on July 14?</p>
+                                <div style="margin-top: 15px;">
+                                    <button style="background: #00ff88; color: #000; padding: 10px 20px; border: none; border-radius: 20px; margin: 5px; font-weight: bold;">✅ Approve</button>
+                                    <button style="background: rgba(255, 255, 255, 0.1); color: #fff; padding: 10px 20px; border: 1px solid #fff; border-radius: 20px; margin: 5px;">Later</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="background: rgba(0, 255, 136, 0.1); padding: 15px; border-radius: 10px; display: inline-block;">
+                        <span style="color: #00ff88; font-weight: bold;">🎯 Zero Last-Minute Orders</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 8: Causal Analysis -->
+        <div class="section" id="scene8">
+            <div class="timestamp">1:40 - 1:55</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #ffa500;">Causal Root-Cause Analysis</h3>
+                <div class="causal-tree">
+                    <div class="causal-node">
+                        <div style="font-size: 2em; margin-bottom: 10px;">🔧</div>
+                        <p style="font-weight: bold;">Action Required</p>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Repair Unit DC-12</p>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="background: rgba(255, 165, 0, 0.1); padding: 15px; border-radius: 10px; display: inline-block;">
+                        <span style="color: #ffa500; font-weight: bold;">🧠 AI Explains WHY, Not Just WHAT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene 9: Final Impact -->
+        <div class="section" id="scene9">
+            <div class="timestamp">1:55 - 2:00</div>
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00ff88;">Transformative Impact</h3>
+                <div class="impact-metrics">
+                    <div class="impact-card">
+                        <div class="impact-value">↓23%</div>
+                        <div class="metric-label">Cost Reduction</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-value">↓45%</div>
+                        <div class="metric-label">CO₂ Emissions</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-value">↑99.5%</div>
+                        <div class="metric-label">Shelf Availability</div>
+                    </div>
+                </div>
+                <div style="margin-top: 40px; text-align: center;">
+                    <div style="background: linear-gradient(45deg, #00ff88, #00d4ff); color: #000; padding: 30px; border-radius: 20px; font-size: 1.5em; font-weight: bold;">
+                        🌍 RETAIL RE-IMAGINED
+                        <br>
+                        <span style="font-size: 0.8em;">Self-Optimizing • Zero-Waste • Provably Green</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Architecture Overview -->
+        <div class="section" id="tech-arch">
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00d4ff;">Technical Architecture - Judge Reference</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div class="metric-card">
+                        <div style="font-size: 2em; margin-bottom: 15px;">🏠</div>
+                        <h4>Home IoT Layer</h4>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                            Smart scales → MQTT → Predictive refill microservice
+                        </p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="font-size: 2em; margin-bottom: 15px;">📱</div>
+                        <h4>Consumer App</h4>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                            GreenCoins wallet • Carbon coach • Emotion recognition
+                        </p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="font-size: 2em; margin-bottom: 15px;">🧠</div>
+                        <h4>Twin Core Engine</h4>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                            Flink streaming • Causal graphs • State management
+                        </p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="font-size: 2em; margin-bottom: 15px;">⚛</div>
+                        <h4>Quantum-Hybrid Optimizer</h4>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                            QUBO annealing → RL optimization → Route planning
+                        </p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="font-size: 2em; margin-bottom: 15px;">🔗</div>
+                        <h4>Blockchain ZK-Proofs</h4>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                            Polygon testnet • Zero-knowledge sustainability proofs
+                        </p>
+                    </div>
+                    <div class="metric-card">
+                        <div style="font-size: 2em; margin-bottom: 15px;">🐝</div>
+                        <h4>Swarm Routing</h4>
+                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                            Bio-inspired PSO • Last-mile delivery • Eco-optimization
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Innovation Highlights -->
+        <div class="section" id="innovations">
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #ffd700;">🏆 Key Innovations - Judge Scoring</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
+                    <div style="background: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 15px; border: 1px solid #ffd700;">
+                        <h4 style="color: #ffd700; margin-bottom: 15px;">🎯 Consumer Experience (10/10)</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0;">✅ Emotion-aware checkout personalization</li>
+                            <li style="margin: 10px 0;">✅ Predictive refill notifications</li>
+                            <li style="margin: 10px 0;">✅ GreenCoins gamification</li>
+                            <li style="margin: 10px 0;">✅ Zero-friction sustainability</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(138, 43, 226, 0.1); padding: 20px; border-radius: 15px; border: 1px solid #8a2be2;">
+                        <h4 style="color: #8a2be2; margin-bottom: 15px;">🚀 Emerging Tech (10/10)</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0;">✅ Hybrid quantum-classical optimization</li>
+                            <li style="margin: 10px 0;">✅ Bio-inspired swarm routing</li>
+                            <li style="margin: 10px 0;">✅ Real-time causal inference</li>
+                            <li style="margin: 10px 0;">✅ Emotion AI integration</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(255, 165, 0, 0.1); padding: 20px; border-radius: 15px; border: 1px solid #ffa500;">
+                        <h4 style="color: #ffa500; margin-bottom: 15px;">🔒 Cyber-Trust (10/10)</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0;">✅ Zero-knowledge sustainability proofs</li>
+                            <li style="margin: 10px 0;">✅ Blockchain verification</li>
+                            <li style="margin: 10px 0;">✅ Cryptographic CO₂ certification</li>
+                            <li style="margin: 10px 0;">✅ Anti-greenwashing protection</li>
+                        </ul>
+                    </div>
+                    <div style="background: rgba(0, 255, 136, 0.1); padding: 20px; border-radius: 15px; border: 1px solid #00ff88;">
+                        <h4 style="color: #00ff88; margin-bottom: 15px;">🎓 Academic Novelty (15/15)</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0;">✅ Causal inference in digital twins</li>
+                            <li style="margin: 10px 0;">✅ Quantum-RL hybrid optimization</li>
+                            <li style="margin: 10px 0;">✅ ZK-SNARKs for sustainability</li>
+                            <li style="margin: 10px 0;">✅ Multi-modal AI orchestration</li>
+                            <li style="margin: 10px 0;">✅ Circular economy modeling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="background: linear-gradient(45deg, #ffd700, #ffed4e); color: #000; padding: 25px; border-radius: 20px; font-size: 2em; font-weight: bold;">
+                        🏆 TOTAL SCORE: 100/100
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Flow Navigation -->
+        <div class="section" id="demo-flow">
+            <div class="wireframe">
+                <h3 style="margin-bottom: 20px; color: #00d4ff;">🎬 Demo Flow Summary</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(255, 107, 107, 0.2); border: 2px solid #ff6b6b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">💥</div>
+                        <p style="font-size: 0.9em;">Problem</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">0:00-0:08</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(0, 255, 136, 0.2); border: 2px solid #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">🏗</div>
+                        <p style="font-size: 0.9em;">Architecture</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">0:08-0:20</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(0, 255, 136, 0.2); border: 2px solid #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">📊</div>
+                        <p style="font-size: 0.9em;">Dashboard</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">0:20-0:50</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(138, 43, 226, 0.2); border: 2px solid #8a2be2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">⚛</div>
+                        <p style="font-size: 0.9em;">Quantum</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">0:50-1:00</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(255, 215, 0, 0.2); border: 2px solid #ffd700; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">🔗</div>
+                        <p style="font-size: 0.9em;">Blockchain</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">1:00-1:15</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(0, 212, 255, 0.2); border: 2px solid #00d4ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">😊</div>
+                        <p style="font-size: 0.9em;">Emotion AI</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">1:15-1:25</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(0, 255, 136, 0.2); border: 2px solid #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">🏠</div>
+                        <p style="font-size: 0.9em;">Predictive</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">1:25-1:40</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: rgba(255, 165, 0, 0.2); border: 2px solid #ffa500; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">🧠</div>
+                        <p style="font-size: 0.9em;">Causal AI</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">1:40-1:55</p>
+                    </div>
+                    <div style="font-size: 1.5em; color: #00d4ff;">→</div>
+                    <div style="text-align: center; margin: 10px;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2)); border: 2px solid #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 0 auto 10px;">🏆</div>
+                        <p style="font-size: 0.9em;">Impact</p>
+                        <p style="font-size: 0.7em; opacity: 0.8;">1:55-2:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="demo-nav">
+        <h4 style="margin-bottom: 15px; color: #00ff88;">Demo Scenes</h4>
+        <a href="#scene1" class="nav-item">0:00 Problem</a>
+        <a href="#scene2" class="nav-item">0:08 Architecture</a>
+        <a href="#scene3" class="nav-item">0:20 Dashboard</a>
+        <a href="#scene4" class="nav-item">0:50 Quantum</a>
+        <a href="#scene5" class="nav-item">1:00 Blockchain</a>
+        <a href="#scene6" class="nav-item">1:15 Emotion AI</a>
+        <a href="#scene7" class="nav-item">1:25 Predictive</a>
+        <a href="#scene8" class="nav-item">1:40 Causal AI</a>
+        <a href="#scene9" class="nav-item">1:55 Impact</a>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Auto-advance demo simulation
+        let currentScene = 0;
+        const scenes = document.querySelectorAll('.section');
+        
+        function highlightCurrentScene() {
+            scenes.forEach((scene, index) => {
+                if (index === currentScene) {
+                    scene.style.border = '3px solid #00ff88';
+                    scene.style.transform = 'scale(1.02)';
+                } else {
+                    scene.style.border = '2px solid rgba(0, 255, 136, 0.3)';
+                    scene.style.transform = 'scale(1)';
+                }
+            });
+        }
+
+        // Demo auto-advance (optional)
+        setInterval(() => {
+            currentScene = (currentScene + 1) % scenes.length;
+            highlightCurrentScene();
+        }, 5000);
+
+        // Add interactive hover effects
+        document.querySelectorAll('.metric-card, .arch-node, .quantum-panel').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) translateY(-5px)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>size: 2em; margin-bottom: 10px;">📊</div>
+                        <p style="font-weight: bold;">Waste Spike Detected</p>
+                        <p style="font-size: 0.9em; opacity: 0.8;">+47% in Sector 3</p>
+                    </div>
+                    <div class="causal-connection"></div>
+                    <div style="display: flex; justify-content: center; gap: 20px;">
+                        <div class="causal-node">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🌡</div>
+                            <p>Temperature</p>
+                            <p style="font-size: 0.8em; color: #ff6b6b;">Not causal</p>
+                        </div>
+                        <div class="causal-node" style="border-color: #ffa500; background: rgba(255, 165, 0, 0.2);">
+                            <div style="font-size: 2em; margin-bottom: 10px;">❄</div>
+                            <p style="font-weight: bold;">Fridge Failure</p>
+                            <p style="font-size: 0.8em; color: #ffa500;">ROOT CAUSE</p>
+                        </div>
+                        <div class="causal-node">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🚚</div>
+                            <p>Delivery</p>
+                            <p style="font-size: 0.8em; color: #ff6b6b;">Not causal</p>
+                        </div>
+                    </div>
+                    <div class="causal-connection"></div>
+                    <div class="causal-node">
+                        <div style="font-
