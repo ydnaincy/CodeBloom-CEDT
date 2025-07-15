@@ -20,6 +20,7 @@ Welcome to the official repository of **CEDT**, a project built by **Team CodeBl
 
 ---
 
+
 ## 📌 Table of Contents
 
 - [🚀 Project Overview](#-project-overview)
@@ -31,18 +32,19 @@ Welcome to the official repository of **CEDT**, a project built by **Team CodeBl
 - [📁 Folder Structure](#-folder-structure)
 - [🛠️ Setup & Run](#️-setup--run)
 - [📸 Screenshots & Demo](#-screenshots--demo)
-- [🤝 Team & Contributions](#-team--contributions)
 - [📄 License](#-license)
 - [📬 Contact](#-contact)
 
 
 ---
 
+
 ## 🚀 Project Overview
 
 **CEDT** (Circular-Economy Digital Twin) is a retail innovation solution that creates digital replicas of physical shelves to monitor stock levels in real time. Combined with predictive refill intelligence, it prevents overstocking and understocking, supports sustainability, and reduces food/waste footprint — specifically designed with Walmart’s scale and goals in mind.
 
 ---
+
 
 ## 🎯 Problem Statement
 
@@ -58,6 +60,7 @@ Walmart’s large-scale inventory system often struggles with:
 ---
 
 
+
 ## 💡 Our Solution
 
 We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictive Refill Algorithms** and **Blockchain-backed refill ledgers**, that ensures:
@@ -68,6 +71,8 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 - Quantum-inspired optimization of supply chains
 
 ---
+
+
 
 ## ✨ Key Features
 
@@ -91,6 +96,8 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 ---
 
+
+
 ## 🧠 Tech Stack
 
 | Category        | Tools / Technologies                       |
@@ -104,6 +111,7 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 | DevOps          | GitHub, Netlify (Frontend), Render         |
 
 ---
+
 
 
 ## 🏗️ System Architecture
@@ -146,32 +154,52 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 ---
 
+
+
 ## 📁 Folder Structure
+
+
+```bash
 cedt/
-├── .gitignore
-├── LICENSE
-├── README.md
-├── requirements.txt
-├── setup.py
-├── pyproject.toml
-├── Makefile
-├── CONTRIBUTING.md
-├── app/                     # Python ML & Flask backend
-├── demo.html                # UI demonstration
+├── .gitignore         # Specifies intentionally untracked files to ignore
+├── LICENSE            # MIT License terms
+├── README.md          # Project overview (this file)
+├── requirements.txt   # Python dependencies
+├── setup.py           # Python packaging configuration
+├── pyproject.toml     # Modern build system configuration
+├── Makefile           # Automation commands (install, test, clean)
+├── CONTRIBUTING.md    # Contribution guidelines
+├── app/               # Flask application and ML backend
+└── demo.html          # UI prototype demonstration
+```
+---
 
 
 
 ## 🛠️ Setup & Run
-# Clone the repo
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/ydnaincy/CodeBloom-CEDT.git
 cd CodeBloom-CEDT
+```
 
-# Install dependencies
+**Install dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-# Run backend
-cd app/
-python app.py
+**Run Flask backend**
+```bash
+cd app
+flask run
+```
+
+**Access demo UI at**:
+```bash
+open demo.html  # Or open in browser manually 
+```
 
 
 
