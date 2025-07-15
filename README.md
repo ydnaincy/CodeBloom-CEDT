@@ -85,7 +85,7 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 ## 🏗️ System Architecture
 
-```plaintext
+plaintext
 [ Smart Shelf Sensors ]
         ↓
 [ IoT Gateway (ESP32/Arduino) ]
@@ -96,12 +96,10 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
         ↓
 [ Digital Twin Dashboard (ReactJS) ]
 
-## 🧪 How to Run
+---
+## 
 
-🖥️ Frontend
-cd frontend/
-npm install
-npm start
+
 
 
 
