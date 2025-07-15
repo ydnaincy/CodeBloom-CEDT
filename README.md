@@ -52,8 +52,11 @@ Walmart’s large-scale inventory system often struggles with:
 - **Customer dissatisfaction** due to out-of-stock situations
 - **Wastage** from unsold perishable goods
 
-**CEDT** aims to solve this with predictive intelligence and digital automation.
+
+  **CEDT** aims to solve this with **predictive intelligence and digital automation**.
+  
 ---
+
 
 ## 💡 Our Solution
 
