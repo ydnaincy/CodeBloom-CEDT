@@ -1,6 +1,5 @@
 # 🌿 CodeBloom – CEDT : Circular-Economy Digital Twin with Predictive Refill Intelligence
 
-![Contributors](https://img.shields.io/github/contributors/ydnaincy/CodeBloom-CEDT?style=for-the-badge)
 ![License](https://img.shields.io/github/license/ydnaincy/CodeBloom-CEDT?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Refill%20Prediction-ML%20Model-blueviolet?style=for-the-badge&logo=python)
 ![IoT](https://img.shields.io/badge/IoT-ESP32%20Gateway-yellowgreen?style=for-the-badge&logo=raspberrypi)
