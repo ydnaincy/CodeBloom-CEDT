@@ -21,16 +21,20 @@ Welcome to the official repository of **CEDT**, a project built by **Team CodeBl
 ---
 
 ## 📌 Table of Contents
+
 - [🚀 Project Overview](#-project-overview)
 - [🎯 Problem Statement](#-problem-statement)
 - [💡 Our Solution](#-our-solution)
 - [✨ Key Features](#-key-features)
 - [🧠 Tech Stack](#-tech-stack)
 - [🏗️ System Architecture](#-system-architecture)
+- [📁 Folder Structure](#-folder-structure)
+- [🛠️ Setup & Run](#️-setup--run)
 - [📸 Screenshots & Demo](#-screenshots--demo)
 - [🤝 Team & Contributions](#-team--contributions)
 - [📄 License](#-license)
 - [📬 Contact](#-contact)
+
 
 ---
 
