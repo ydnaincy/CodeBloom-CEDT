@@ -8,6 +8,12 @@
 ![Status](https://img.shields.io/badge/System-Prototype%20Live-brightgreen?style=for-the-badge&logo=github)
 ![Retail](https://img.shields.io/badge/Industry-RetailTech-purple?style=for-the-badge&logo=shopping-cart)
 
+## 🤝 Contributors
+
+![Contributors](https://img.shields.io/github/contributors/ydnaincy/CodeBloom-CEDT?style=flat-square)
+
+- 👩‍💻 [**Naincy Yadav**](https://github.com/ydnaincy)
+- 👩‍💻 [**Simer Khurmi**](https://github.com/Simer-Khurmi)
 
 
 Welcome to the official repository of **CEDT**, a project built by **Team CodeBloom (Naincy Yadav & Simer Khurmi)** for Walmart. This system reimagines the retail ecosystem with a smart, sustainable, and predictive refill platform powered by **AI, Blockchain, IoT, and Quantum-inspired Intelligence**.
