@@ -48,6 +48,7 @@ Walmart’s large-scale inventory system often struggles with:
 - **Customer dissatisfaction** due to out-of-stock situations
 - **Wastage** from unsold perishable goods
 
+**CEDT** aims to solve this with predictive intelligence and digital automation.
 ---
 
 ## 💡 Our Solution
@@ -137,6 +138,34 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 
 ---
+
+## 📁 Folder Structure
+cedt/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── setup.py
+├── pyproject.toml
+├── Makefile
+├── CONTRIBUTING.md
+├── app/                     # Python ML & Flask backend
+├── demo.html                # UI demonstration
+
+
+
+## 🛠️ Setup & Run
+# Clone the repo
+git clone https://github.com/ydnaincy/CodeBloom-CEDT.git
+cd CodeBloom-CEDT
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run backend
+cd app/
+python app.py
+
 
 
 ## 📄 License
