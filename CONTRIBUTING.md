@@ -89,20 +89,23 @@ docs(api): update endpoint documentation
 ## 🏗️ Project Structure
 
 ```
-cedt/
-├── app/                    # Main application code
-│   ├── api/               # FastAPI endpoints
-│   ├── core/              # Core business logic
-│   ├── models/            # Data models
-│   ├── services/          # Service layer
-│   ├── workers/           # Background workers
-│   └── utils/             # Utility functions
-├── docs/                  # Documentation
-├── tests/                 # Test files
-├── scripts/               # Deployment scripts
-├── config/                # Configuration files
-└── data/                  # Sample data
+## 📁 Folder Structure
+
+
 ```
+cedt/
+├── .gitignore         # Specifies intentionally untracked files to ignore
+├── LICENSE            # MIT License terms
+├── README.md          # Project overview (this file)
+├── requirements.txt   # Python dependencies
+├── setup.py           # Python packaging configuration
+├── pyproject.toml     # Modern build system configuration
+├── Makefile           # Automation commands (install, test, clean)
+├── CONTRIBUTING.md    # Contribution guidelines
+├── app/               # Flask application and ML backend
+└── demo.html          # UI prototype demonstration
+```
+
 
 ## 🧪 Testing Guidelines
 
