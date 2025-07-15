@@ -1,7 +1,8 @@
 # 🌿 CodeBloom – CEDT : Circular-Economy Digital Twin with Predictive Refill Intelligence
 
-![Contributors](https://img.shields.io/github/contributors/naincyyadav/CodeBloom-CEDT?style=for-the-badge)
-![License](https://img.shields.io/github/license/naincyyadav/CodeBloom-CEDT?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/ydnaincy/CodeBloom-CEDT?style=for-the-badge)
+![License](https://img.shields.io/github/license/ydnaincy/CodeBloom-CEDT?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/ydnaincy/CodeBloom-CEDT?style=for-the-badge)
 
 
 Welcome to the official repository of **CEDT**, a project built by **Team CodeBloom (Naincy Yadav & Simer Khurmi)** for Walmart. This system reimagines the retail ecosystem with a smart, sustainable, and predictive refill platform powered by **AI, Blockchain, IoT, and Quantum-inspired Intelligence**.
@@ -85,7 +86,6 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 ---
 
-## 🏗️ System Architecture
 
 ## 🏗️ System Architecture
 
@@ -128,14 +128,14 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 ---
 
 
-  ## 📄 License
+## 📄 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 ## 📬 Contact
 
 Feel free to reach out for collaboration or questions:
 
-- [Naincy Yadav](https://www.linkedin.com/in/naincyyadav)
+- [Naincy Yadav](www.linkedin.com/in/naincy-yadav-3a63a7263)
 - [Simer Khurmi](https://www.linkedin.com/in/simerkhurmi)
  
 
