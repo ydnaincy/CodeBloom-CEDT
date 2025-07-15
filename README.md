@@ -87,6 +87,9 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 ## 🏗️ System Architecture
 
+## 🏗️ System Architecture
+
+```plaintext
 +------------------------+
 |  Smart Shelf Sensors   |
 +------------------------+
@@ -119,20 +122,11 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 | ✅ Stock Alerts & Refill Recommendations     |
 | → For Store Managers & Automated Logistics  |
 +---------------------------------------------+
+```
 
 
 ---
-## 🧪 How to Run
 
-# 🖥️ Frontend  
-  cd frontend/
-  npm install
-  npm start
-
-# ⚙️ Backend API
-  cd backend/
-  npm install
-  node server.js
 
   ## 📄 License
 This project is licensed under the MIT License – see the LICENSE file for details.
