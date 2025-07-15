@@ -8,7 +8,6 @@
 ![Dashboard](https://img.shields.io/badge/Digital%20Twin-ReactJS%20Dashboard-informational?style=for-the-badge&logo=react)
 ![Status](https://img.shields.io/badge/System-Prototype%20Live-brightgreen?style=for-the-badge&logo=github)
 ![Retail](https://img.shields.io/badge/Industry-RetailTech-purple?style=for-the-badge&logo=shopping-cart)
-![ML Model](https://img.shields.io/badge/Refill%20Prediction-ML%20Model-blueviolet?style=for-the-badge&logo=python)
 
 
 
