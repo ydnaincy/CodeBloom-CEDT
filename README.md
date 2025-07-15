@@ -1,5 +1,9 @@
 # 🌿 CodeBloom – CEDT : Circular-Economy Digital Twin with Predictive Refill Intelligence
 
+![Contributors](https://img.shields.io/github/contributors/naincyyadav/CodeBloom-CEDT?style=for-the-badge)
+![License](https://img.shields.io/github/license/naincyyadav/CodeBloom-CEDT?style=for-the-badge)
+
+
 Welcome to the official repository of **CEDT**, a project built by **Team CodeBloom (Naincy Yadav & Simer Khurmi)** for Walmart. This system reimagines the retail ecosystem with a smart, sustainable, and predictive refill platform powered by **AI, Blockchain, IoT, and Quantum-inspired Intelligence**.
 
 ---
@@ -11,8 +15,6 @@ Welcome to the official repository of **CEDT**, a project built by **Team CodeBl
 - [✨ Key Features](#-key-features)
 - [🧠 Tech Stack](#-tech-stack)
 - [🏗️ System Architecture](#-system-architecture)
-- [🧪 How to Run](#-how-to-run)
-- [🧩 Folder Structure](#-folder-structure)
 - [📸 Screenshots & Demo](#-screenshots--demo)
 - [🤝 Team & Contributions](#-team--contributions)
 - [📄 License](#-license)
@@ -85,19 +87,63 @@ We introduce a **Digital Twin powered by AI and IoT**, enhanced with **Predictiv
 
 ## 🏗️ System Architecture
 
-plaintext
-[ Smart Shelf Sensors ]
-        ↓
-[ IoT Gateway (ESP32/Arduino) ]
-        ↓
-[ Refill Prediction Engine (Python ML) ] ← Historical + Real-time Data
-        ↓
-[ Blockchain Smart Contract (Solidity) ]
-        ↓
-[ Digital Twin Dashboard (ReactJS) ]
++------------------------+
+|  Smart Shelf Sensors   |
++------------------------+
+            |
+            v
++----------------------------+
+|  IoT Gateway (ESP32/Arduino) |
++----------------------------+
+            |
+            v
++----------------------------------------------------+
+|  Refill Prediction Engine (Python ML Models)       |
+|  ← Uses Historical + Real-time Inventory Data      |
++----------------------------------------------------+
+            |
+            v
++---------------------------------------+
+|  Blockchain Smart Contract (Solidity) |
+|  → Tamper-proof refill transactions   |
++---------------------------------------+
+            |
+            v
++------------------------------------+
+|  Digital Twin Dashboard (ReactJS) |
+|  → Real-time UI for monitoring     |
++------------------------------------+
+            |
+            v
++---------------------------------------------+
+| ✅ Stock Alerts & Refill Recommendations     |
+| → For Store Managers & Automated Logistics  |
++---------------------------------------------+
+
 
 ---
-## 
+## 🧪 How to Run
+
+# 🖥️ Frontend  
+  cd frontend/
+  npm install
+  npm start
+
+# ⚙️ Backend API
+  cd backend/
+  npm install
+  node server.js
+
+  ## 📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+## 📬 Contact
+
+Feel free to reach out for collaboration or questions:
+
+- [Naincy Yadav](https://www.linkedin.com/in/naincyyadav)
+- [Simer Khurmi](https://www.linkedin.com/in/simerkhurmi)
+ 
 
 
 
